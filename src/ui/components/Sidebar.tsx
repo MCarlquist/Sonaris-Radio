@@ -1,15 +1,16 @@
 import { type NavigationItem } from "../navigation";
 
+
 type SidebarProps = {
     selected: NavigationItem;
     onSelect: (item: NavigationItem) => void;
 }
 
 const items: NavigationItem[] = [
-    'search',
-    'artists',
-    'albums',
-    'playlists'
+    'Search',
+    'Artists',
+    'Albums',
+    'Playlists'
 ];
 
 export function Sidebar({ selected, onSelect}: SidebarProps) {
@@ -18,8 +19,9 @@ export function Sidebar({ selected, onSelect}: SidebarProps) {
             <text>SONARIS</text>
             <text>---------------</text>
             {items.map((item) => (
-                <text key={item} onClick={() => onSelect(item)}>
-                    {item.toUpperCase()} {selected === item ? '>' : ''}
+                <text key={item} onKeyDown={() => onSelect(item)}>
+                    {selected === item ? '>' : ''} {`${item}`}
+                
                 </text>
             ))}
         </box>

@@ -46,7 +46,7 @@ export function ApiScreen({ onComplete }: Props) {
             <box borderColor={'white'} padding={2}>
                 <text content="Enter your Jamendo API key:" paddingBottom={1} />
                 <input onInput={setKey} onSubmit={submit} placeholder="Key..." backgroundColor={'#D6CAC7'} textColor={'black'} />
-                <text onClick={submit} marginTop={2}>{validating.state ? validating.message : "Save API Key"}</text>
+                <text {...({ onClick: submit } as any)} marginTop={2}>{validating.state ? validating.message : "Save API Key"}</text>
                 {status ? <text content={status} alignItems="center" justifyContent="center" /> : null}
             </box>
         </box>

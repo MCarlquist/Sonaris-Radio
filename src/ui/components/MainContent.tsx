@@ -2,6 +2,7 @@ import { type NavigationItem } from "../navigation";
 import { SearchScreen } from "../screens/SearchScreen";
 import { ArtistsScreen } from "../screens/ArtistsScreen";
 import { PlaylistsScreen } from "../screens/PlaylistsScreen";
+import { AlbumsScreen } from "../screens/AlbumsScreen";
 
 type Props = {
     selected: NavigationItem;
@@ -9,11 +10,13 @@ type Props = {
 
 export function MainContent({ selected}: Props) {
     switch (selected) {
-        case 'artists':
+        case 'Artists':
             return <ArtistsScreen />
-        case 'search':
+        case 'Search':
             return <SearchScreen />
-        case 'playlists':
+        case 'Albums':
+            return <AlbumsScreen />
+        case 'Playlists':
             return <PlaylistsScreen />
         default:
             return (
