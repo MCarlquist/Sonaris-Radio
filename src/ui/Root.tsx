@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { loadConfig } from "../state/config";
 import { ApiScreen } from "./ApiScreen";
+import { HomeScreen } from "./screens/HomeScreen";
 
 export function Root() {
     const [ ready, setReady ] = useState(false);
@@ -15,9 +16,7 @@ export function Root() {
     }
 
     return (
-        <box alignItems="center" justifyContent="center" flexGrow={1}>
-            <text content="hi" />
-        </box>
+        <HomeScreen />
     );
 }
 
