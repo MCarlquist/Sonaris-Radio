@@ -6,14 +6,17 @@ import { AlbumsScreen } from "../screens/AlbumsScreen";
 
 type Props = {
     selected: NavigationItem;
+    focused?: boolean;
+    onArtistActivate?: (artistName: string) => void;
+    searchQuery?: string | undefined;
 }
 
-export function MainContent({ selected}: Props) {
+export function MainContent({ selected, focused = false, onArtistActivate, searchQuery }: Props) {
     switch (selected) {
         case 'Artists':
-            return <ArtistsScreen />
+            return <ArtistsScreen focused={focused} onArtistActivate={onArtistActivate} />
         case 'Search':
-            return <SearchScreen />
+            return <SearchScreen query={searchQuery} />
         case 'Albums':
             return <AlbumsScreen />
         case 'Playlists':
